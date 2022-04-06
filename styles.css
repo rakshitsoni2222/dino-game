@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Roboto&family=Satisfy&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(18, 18, 18);
+}
+
+#game {
+  width: 1000px;
+  height: 500px;
+  border: 1px solid rgba(255, 255, 255, 55%);
+  position: relative;
+  overflow: hidden;
+  background: rgba(18, 18, 18, 80%);
+}
+
+#dino {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  transition: 0.1s ease-in-out;
+  background-image: url(./stand.png);
+  background-size: 100% 100%;
+}
+
+.jump {
+  animation: jump 0.5s linear;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  25% {
+    bottom: 90px;
+  }
+  50% {
+    bottom: 180px;
+  }
+  75% {
+    bottom: 90px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+#cactus {
+  background-color: gray;
+  position: absolute;
+  bottom: 0;
+}
+
+#game h1 {
+  position: absolute;
+  font-size: 40px;
+  font-weight: 400;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  color: rgba(255, 255, 255, 55%);
+  text-align: center;
+}
+
+.gameOver {
+  animation-play-state: paused;
+}
+
+#score,
+#previousScore {
+  position: absolute;
+  font-size: 21px;
+  color: rgba(255, 255, 255, 95%);
+  user-select: none;
+}
+
+#score {
+  top: 20px;
+  left: 50px;
+}
+
+#previousScore {
+  top: 20px;
+  right: 50px;
+}
+
+#scoreUpdate,
+#previousScoreUpdate {
+  display: block;
+  user-select: none;
+}
